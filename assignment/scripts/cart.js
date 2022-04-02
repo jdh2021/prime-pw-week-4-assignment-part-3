@@ -13,6 +13,7 @@ let basket = [];
 
 function addItem (item) {
     basket.push(item);
+    console.log('Item ' + item + ' was added.');
     return true;
 }
 
@@ -40,8 +41,7 @@ console.log(listItems());
 //  reset the basket to an empty array
 
 function empty () {
-    basket.length = 0;
-    return basket;
+    basket.splice(0, basket.length);
 }
 
 //Tests
@@ -80,16 +80,16 @@ function addItemStretch (item) {
         return false;
     } else {
     basket.push(item);
-    console.log('A ' + item + ' was added.')
+    console.log('Item ' + item + ' was added.')
     return true;
     }
 }
 
 //Tests
-(addItem('apple'));
-(addItem('banana'));
-(addItem('cantaloupe'));
-(addItem('peach'));
+console.log(addItemStretch('apple'));
+console.log(addItemStretch('banana'));
+console.log(addItemStretch('cantaloupe'));
+console.log(addItemStretch('peach'));
 console.log(listItems());
 console.log('Basket now includes ' + basket.length + ' items.');
 
@@ -98,7 +98,6 @@ console.log('Basket now includes ' + basket.length + ' items.');
 console.log(addItemStretch('plum'));
 
 console.log(listItems());
-console.log('Basket now includes ' + basket.length + ' items.');
 
 //4. Create a function called removeItem. It should:
 //  Take an input parameter for a string item
@@ -110,14 +109,16 @@ function removeItem (item) {
     if (basket.indexOf(item) >= 0 ) {
         console.log('This item ' + item + ' is at index ' + basket.indexOf(item) + '.');
         basket.splice(basket.indexOf(item), 1);
-        return console.log('A ' + item + ' was removed.');
+        return console.log('Item ' + item + ' was removed.');
     } else {
-        console.log('This item ' + item + ' was not found.');
+        console.log('Item ' + item + ' was not found.');
         return null;
     }
 }
 
 //Tests
 console.log(removeItem('cantaloupe'));
-console.log(basket);
 console.log(removeItem('pomegranate'));
+console.log(basket);
+console.log(empty());
+console.log(basket);
