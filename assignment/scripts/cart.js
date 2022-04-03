@@ -90,11 +90,11 @@ console.log(addItemStretch('apple'));
 console.log(addItemStretch('banana'));
 console.log(addItemStretch('cantaloupe'));
 console.log(addItemStretch('peach'));
-console.log(listItems());
 console.log('Basket now includes ' + basket.length + ' items.');
 
 console.log(addItemStretch('pear'));
 console.log('Basket now includes ' + basket.length + ' items.');
+console.log(isFull());
 console.log(addItemStretch('plum'));
 
 console.log(listItems());
